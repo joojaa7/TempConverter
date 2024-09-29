@@ -5,9 +5,11 @@ pipeline {
         // Define Docker Hub credentials ID
         DOCKERHUB_CREDENTIALS_ID = 'DOCKER_CREDENTIALS'
         // Define Docker Hub repository name
-        DOCKERHUB_REPO = 'dockdockdockdockdockdockdoc744/tempcon/tags'
+        DOCKERHUB_REPO = 'dockdockdockdockdockdockdoc744/tempcon/'
         // Define Docker image tag
         DOCKER_IMAGE_TAG = 'latest'
+
+        dockerImage = ''
     }
     stages {
         stage('Checkout') {
@@ -20,7 +22,7 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
+                    dockerImage = docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                 }
             }
         }
@@ -29,7 +31,7 @@ pipeline {
                 // Push Docker image to Docker Hub
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', DOCKERHUB_CREDENTIALS_ID) {
-                        docker.image("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}").push()
+                        dockerImage.push()
                     }
                 }
             }
