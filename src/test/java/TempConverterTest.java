@@ -14,4 +14,9 @@ public class TempConverterTest {
         assertEquals(0.0, TempConverter.kelvinToCel(273.15f), 0.001);
     }
 
+    @org.junit.jupiter.api.Test
+    void testKelvinToFah(){
+        assertEquals(-458, TempConverter.kelvinToFah(1), 0.001);
+    }
+
 }

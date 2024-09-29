@@ -8,4 +8,8 @@ public class TempConverter {
         return (fahr - 32) * 5 / 9;
     }
 
+    public static  double kelvinToFah(double kel) {
+        return Math.round((kel-273.15)* ((double) 9/5) + 32);
+    }
+
 }
