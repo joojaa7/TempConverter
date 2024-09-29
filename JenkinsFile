@@ -5,7 +5,7 @@ pipeline {
         // Define Docker Hub credentials ID
         DOCKERHUB_CREDENTIALS_ID = 'DOCKER_CREDENTIALS'
         // Define Docker Hub repository name
-        DOCKERHUB_REPO = 'dockdockdockdockdockdockdoc744/tempcon/'
+        DOCKERHUB_REPO = 'dockdockdockdockdockdockdoc744/tempcon/general'
         // Define Docker image tag
         DOCKER_IMAGE_TAG = 'latest'
     }
